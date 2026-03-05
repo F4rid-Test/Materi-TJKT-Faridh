@@ -12,12 +12,41 @@ html {
 }
 
 body {
-  background-image: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,0.4) 0%, transparent 35%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,0.4) 0%, transparent 35%),
+    linear-gradient(135deg, #a1ffce, #faffd1, #ffd6e8);
+
+  background-attachment: fixed;
   color: #000;
 }
 
+/* ================= HEADER ================= */
+
+header {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 20px;
+  padding: 15px;
+  border-radius: 25px;
+  border: 3px solid #333;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* ================= NAVBAR STICKY ================= */
+
 nav {
-  margin-top: 15px;
+  text-align: center;
+  background: #ffffff80;
+  backdrop-filter: blur(5px);
+  margin: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #333;
+  box-shadow: 3px 3px 0 #333;
 }
 
 nav a {
@@ -29,8 +58,27 @@ nav a {
   border: 3px solid #000;
   color: #000;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.2s ease;
 }
+
+/* Hover effect */
+nav a:hover {
+  background: #ff6b81;
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0 #333;
+}
+
+/* Klik effect */
+nav a:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+
+.nvbar {
+  border-top: 2px solid #333;
+}
+
+/* ================= HR ================= */
 
 hr {
   border: none;
@@ -40,11 +88,14 @@ hr {
   margin: 40px 0;
 }
 
+/* ================= HEADINGS ================= */
+
 h1 {
   font-size: 32px;
   font-weight: 700;
   color: #ff4757;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 0 #fff;
 }
 
 h2 {
@@ -65,6 +116,8 @@ h4 {
   color: #ffa502;
 }
 
+/* ================= LIST ================= */
+
 ul, ol {
   margin-left: 20px;
   margin-top: 10px;
@@ -74,11 +127,8 @@ li {
   margin-bottom: 5px;
 }
 
-.tabel {
-  overflow-x: auto;
-}
+/* ================= SECTION CONTAINER ================= */
 
-header,
 .cmdprmpt,
 .ipaddress,
 .toolvoltnwatt,
@@ -89,8 +139,10 @@ header,
   padding: 15px;
   border-radius: 25px;
   border: 3px solid #333;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
 }
+
+/* ================= CARD STYLE ================= */
 
 .commandprm,
 .peralatan,
@@ -101,8 +153,19 @@ header,
   padding: 10px;
   border-radius: 20px;
   border: 2px solid #333;
-  box-shadow: 6px 6px 0 #70a1ff;
+  box-shadow: 3px 3px 0 #70a1ff;
+  transition: 0.2s;
 }
+
+/* Efek naik dikit saat hover */
+.commandprm:hover,
+.peralatan:hover,
+.aplikasi:hover,
+.kelasip:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= CONTOH COMMAND ================= */
 
 .contoh {
   background: #ffeaa7;
@@ -114,6 +177,12 @@ header,
   border: 1.5px solid #333;
   box-shadow: 3px 3px 0px #fab1a0;
   margin: 5px 0;
+}
+
+/* ================= TABLE ================= */
+
+.tabel {
+  overflow-x: auto;
 }
 
 table {
@@ -134,4 +203,9 @@ table td {
   background: #dfe6e9;
   padding: 10px;
   border: 2px solid #333;
+  transition: 0.2s;
+}
+
+table tr:hover td {
+  background: #ffeaa7;
 }
